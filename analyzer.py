@@ -3,6 +3,7 @@ import cv2
 import requests
 import pprint
 from PIL import Image, ImageDraw
+import time
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person
@@ -31,6 +32,7 @@ def getRectangle(faceDictionary):
     return ((left, top), (right, bottom))
 
 def analyze_video(url):
+    counter = 0
     # Opens the Video file
     cap = cv2.VideoCapture(url)
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -40,6 +42,7 @@ def analyze_video(url):
     is_first_frame = True
     first_frame_faces = []
     result = {}
+    face_client = FaceClient("https://instance-01.cognitiveservices.azure.com/", CognitiveServicesCredentials(AZURE_KEY))
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
@@ -54,6 +57,10 @@ def analyze_video(url):
             # Azure API Call
             if is_first_frame:
                 response = requests.post(endpoint, headers=headers, params=params, data=buf.tobytes())
+                # counter += 1
+                # if counter > 20: 
+                #     time.sleep(20)
+                #     counter = 0
                 response.raise_for_status()
                 output = response.json()
 
@@ -70,7 +77,7 @@ def analyze_video(url):
                     draw.rectangle(getRectangle(face), outline='yellow') 
 
                 # Display the image in the users default image browser.
-                # img.show()
+                img.show()
 
                 first_frame_faces = list(map(lambda x: x["faceId"], output))
                 for x in first_frame_faces:
@@ -84,13 +91,21 @@ def analyze_video(url):
                 is_first_frame = False
             else:
                 response = requests.post(endpoint, headers=headers, params=params, data=buf.tobytes())
+                counter += 1
+                if counter > 20: 
+                    time.sleep(20)
+                    counter = 0
                 response.raise_for_status()
                 output = response.json()
                 curr_frame_faces = list(map(lambda x: x["faceId"], output))
-                face_client = FaceClient("https://instance-01.cognitiveservices.azure.com/", CognitiveServicesCredentials(AZURE_KEY))
                 similar_faces = False
                 for x in first_frame_faces:
                     similar_faces = face_client.face.find_similar(face_id=x, face_ids=curr_frame_faces)
+                    counter += 1
+                    if counter > 20: 
+                        print('sleeping')
+                        time.sleep(20) 
+                        counter = 0
                     confidence = 0
                     face_id = "null"
                     for face in similar_faces:
