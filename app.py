@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from analyzer import analyze_video
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/')
 def welcome():
