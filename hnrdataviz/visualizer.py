@@ -39,7 +39,7 @@ def visualizer(ppl_dct):
         # barchart.write_json(f'{person}_emotions.json')
         # bar_html = barchart.to_html(full_html = False)
         bar_json = barchart.to_json()
-        dict_jsons[person] = barchart
+        dict_jsons[person] = bar_json
     return dict_jsons
     
     # for person in persons:
