@@ -2,6 +2,7 @@ import os
 import cv2
 import requests
 import pprint
+from PIL import Image, ImageDraw
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person
@@ -17,6 +18,17 @@ params = {
     'returnFaceId': 'true',
     'detectionModel': 'detection_01'
 }
+
+# Convert width height to a point in a rectangle
+def getRectangle(faceDictionary):
+    # print(faceDictionary)
+    rect = faceDictionary["faceRectangle"]
+    left = rect["left"]
+    top = rect["top"]
+    right = left + rect["width"]
+    bottom = top + rect["height"]
+    
+    return ((left, top), (right, bottom))
 
 def analyze_video(url):
     # Opens the Video file
@@ -38,11 +50,28 @@ def analyze_video(url):
             # to write frames to disk
             # cv2.imwrite('test_' + str(i) + '.jpg', frame)
             ret, buf = cv2.imencode('.jpg', frame)
+            cv2.imwrite('data\pic.jpg', frame)
             # Azure API Call
             if is_first_frame:
                 response = requests.post(endpoint, headers=headers, params=params, data=buf.tobytes())
                 response.raise_for_status()
                 output = response.json()
+
+                # Download the image from the url
+                # response = requests.get('/data/pic.jpg')
+                # img = Image.open(BytesIO(response.content))
+                img = Image.open("data\pic.jpg")
+
+                # For each face returned use the face rectangle and draw a red box.
+                # print('Drawing rectangle around face... see popup for results.')
+                draw = ImageDraw.Draw(img)
+                for face in output:
+                    draw.text((face["faceRectangle"]["left"], face["faceRectangle"]["top"]), face["faceId"], align ="left", fill="pink") 
+                    draw.rectangle(getRectangle(face), outline='yellow') 
+
+                # Display the image in the users default image browser.
+                # img.show()
+
                 first_frame_faces = list(map(lambda x: x["faceId"], output))
                 for x in first_frame_faces:
                     curr_result = {}
@@ -72,15 +101,11 @@ def analyze_video(url):
                             if y["faceId"] == face_id:
                                 result[x].append(y["faceAttributes"]["emotion"])
                                 break
-            
-            # discard frames without faces
-            if len(output) != 0:
-                res.append(output)
         i += 1
 
-    print("")
-    pp = pprint.PrettyPrinter(indent=1)
-    pp.pprint(result)
+    # print("")
+    # pp = pprint.PrettyPrinter(indent=1)
+    # pp.pprint(result)
     cap.release()
     cv2.destroyAllWindows()
     return result
