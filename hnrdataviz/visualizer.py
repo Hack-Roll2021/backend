@@ -39,6 +39,7 @@ def visualizer(ppl_dct):
         bar_html = barchart.to_html(full_html = False)
         list_htmls.append(bar_html)
         # barchart.write_json(f'{person}_emotions.json')
+    return list_htmls
     
     # for person in persons:
     #     filename = f'{person}_emotions.json'
