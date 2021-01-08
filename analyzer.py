@@ -85,7 +85,3 @@ def analyze_video(url):
     cv2.destroyAllWindows()
     return result
 
-
-def analyze_emotions(data):
-    # TODO
-    pass

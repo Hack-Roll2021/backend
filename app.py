@@ -11,5 +11,5 @@ def welcome():
 def analyze():
     # test_url = "https://media.istockphoto.com/videos/group-of-six-friends-saying-cheers-over-video-chat-video-id1221689160"
     data = request.get_json()
-    return jsonify(analyze_video(data['url']))
+    result = analyze_video(data['url'])
 
