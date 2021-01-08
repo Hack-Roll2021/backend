@@ -26,9 +26,9 @@ def visualizer(ppl_dct):
     columns_id = ['time', 'anger', 'contempt', 'disgust', 'fear', 'happiness', 'neutral', 'sadness', 'surprise']
 
 
-    list_htmls = []
+    dict_htmls = {}
     for person, df in zip(persons, persons_dfs):
-        df.rename_axis('time')
+        df['time'] = df.index
         barchart = px.bar(
             df,
             x = 'time',
@@ -36,10 +36,10 @@ def visualizer(ppl_dct):
             title= person + 's emotions over time',
         )
         # barchart.write_image('test.png')
-        bar_html = barchart.to_html(full_html = False)
-        list_htmls.append(bar_html)
         # barchart.write_json(f'{person}_emotions.json')
-    return list_htmls
+        bar_html = barchart.to_html(full_html = False)
+        dict_htmls[person] = bar_html
+    return dict_htmls
     
     # for person in persons:
     #     filename = f'{person}_emotions.json'
