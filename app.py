@@ -16,6 +16,6 @@ def analyze():
     # test_url = "https://media.istockphoto.com/videos/group-of-six-friends-saying-cheers-over-video-chat-video-id1221689160"
     data = request.get_json()
     result = analyze_video(data['url'])
-    dict_htmls = visualizer(result)
-    return dict_htmls
+    dict_jsons = visualizer(result)
+    return dict_jsons
 

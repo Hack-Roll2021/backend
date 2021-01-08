@@ -26,7 +26,7 @@ def visualizer(ppl_dct):
     columns_id = ['time', 'anger', 'contempt', 'disgust', 'fear', 'happiness', 'neutral', 'sadness', 'surprise']
 
 
-    dict_htmls = {}
+    dict_jsons = {}
     for person, df in zip(persons, persons_dfs):
         df['time'] = df.index
         barchart = px.bar(
@@ -37,9 +37,10 @@ def visualizer(ppl_dct):
         )
         # barchart.write_image('test.png')
         # barchart.write_json(f'{person}_emotions.json')
-        bar_html = barchart.to_html(full_html = False)
-        dict_htmls[person] = bar_html
-    return dict_htmls
+        # bar_html = barchart.to_html(full_html = False)
+        bar_json = barchart.to_json()
+        dict_jsons[person] = barchart
+    return dict_jsons
     
     # for person in persons:
     #     filename = f'{person}_emotions.json'
