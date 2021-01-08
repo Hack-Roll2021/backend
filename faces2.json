@@ -1,0 +1,214 @@
+{
+    "815fc825-b5f1-4c8b-a7c8-ef45008d8001": [
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.999,
+            "neutral": 0.0,
+            "sadness": 0.001,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.999,
+            "neutral": 0.001,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.998,
+            "neutral": 0.001,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        }
+    ],
+    "5640487d-b328-4cbe-b3b4-a4dfd4438c9c": [
+        {
+            "anger": 0.0,
+            "contempt": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.012,
+            "neutral": 0.983,
+            "sadness": 0.002,
+            "surprise": 0.002
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        }
+    ],
+    "3321e2e9-9fb8-488a-be6e-e6c5685a24ec": [
+        {
+            "anger": 0.0,
+            "contempt": 0.01,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.466,
+            "neutral": 0.516,
+            "sadness": 0.007,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.002,
+            "fear": 0.0,
+            "happiness": 0.998,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.016,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.01,
+            "neutral": 0.972,
+            "sadness": 0.002,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        }
+    ],
+    "68346b8b-b733-46e3-b404-55f5e655bc61": [
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.987,
+            "neutral": 0.008,
+            "sadness": 0.0,
+            "surprise": 0.004
+        }
+    ],
+    "037d9a27-22f9-4b51-96f5-31cbdbcf2581": [
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        }
+    ],
+    "ae383968-4f93-4e9f-99f8-a53c2543292b": [
+        {
+            "anger": 0.0,
+            "contempt": 0.003,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.022,
+            "neutral": 0.962,
+            "sadness": 0.007,
+            "surprise": 0.005
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 1.0,
+            "neutral": 0.0,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.865,
+            "neutral": 0.134,
+            "sadness": 0.0,
+            "surprise": 0.0
+        },
+        {
+            "anger": 0.0,
+            "contempt": 0.0,
+            "disgust": 0.0,
+            "fear": 0.0,
+            "happiness": 0.743,
+            "neutral": 0.257,
+            "sadness": 0.0,
+            "surprise": 0.0
+        }
+    ]
+}
